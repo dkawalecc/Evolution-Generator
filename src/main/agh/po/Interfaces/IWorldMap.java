@@ -23,7 +23,7 @@ public interface IWorldMap {
     boolean place(Animal animal);
 
 
-    void run();
+    void run(int moveEnergy);
 
     /**
 

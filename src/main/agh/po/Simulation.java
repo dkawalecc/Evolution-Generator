@@ -1,6 +1,9 @@
 package agh.po;
 
+import agh.po.Visualizer.ScreenCleaner;
 import agh.po.WorldMap.SteppeMap;
+import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
+import org.w3c.dom.ls.LSOutput;
 
 public class Simulation {
 
@@ -51,16 +54,15 @@ public class Simulation {
             }
             ScreenCleaner.clean();
             this.drawMap();
+            //System.out.println();
         }
     }
 
     private void drawMap() {
-        System.out.println(this.map);
-    }
+        this.map.toString();
+    } //System.out.println();
 }
 
+
 //update etc.
-
-
-
 //space for the usage of the steppe function (day simulation generator)

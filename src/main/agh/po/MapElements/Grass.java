@@ -5,15 +5,15 @@ import agh.po.Interfaces.IWorldMap;
 import agh.po.Vector2D;
 
 public class Grass extends AbstractMapElement{
-    private final double plantEnergy;
+    private final int plantEnergy;
 
-    public Grass(Vector2D initPosition, double energy) {
+    public Grass(Vector2D initPosition, int energy) {
         super(initPosition);
         this.plantEnergy = energy;
     }
 
-    public double eatGrass() {
-        double result = plantEnergy;
+    public int eatGrass() {
+        int result = plantEnergy;
         this.deleteElement();
         return result;
 

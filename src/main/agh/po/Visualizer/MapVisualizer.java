@@ -1,6 +1,7 @@
-package agh.po;
+package agh.po.Visualizer;
 
 import agh.po.Interfaces.IWorldMap;
+import agh.po.Vector2D;
 
 /**
         * The map visualizer converts the {@link IWorldMap} map into a string

@@ -1,4 +1,4 @@
-package agh.po;
+package agh.po.Visualizer;
 
 import java.io.IOException;
 

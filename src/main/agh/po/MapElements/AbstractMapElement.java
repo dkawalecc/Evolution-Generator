@@ -36,8 +36,9 @@ public abstract class AbstractMapElement implements IMapElement {
     //protected
     public void deleteElement() {
         for (IPositionChangeObserver observer : observers) {
-            removeObserver(observer);
             observer.elementRemoved(this, this.position);
+            observer.deleteAnimal(this);
+            removeObserver(observer);
         }
     }
 

@@ -53,14 +53,14 @@ public class Vector2D {
         Vector2D that = (Vector2D) other;
         return (this.x == that.y && this.y == that.y);
     }
-    /*
+
     public ArrayList<Vector2D> nextField(){
-        ArrayList<Vector2D> list = new ArrayList<>();
-        for(MapDirection direct : MapDirection.values()){
-            list.add(this.add(direct.toUnitVector()));
+        ArrayList<Vector2D> fields = new ArrayList<>();
+        for(MapDirection direction : MapDirection.values()){
+            fields.add(this.add(direction.toUnitVector()));
         }
-        return list;
+        return fields;
     }
-    */
+
 
 }

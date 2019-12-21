@@ -7,21 +7,16 @@ import agh.po.Vector2D;
 
 public class Animal extends AbstractMapElement {
     private int energy;
-    private int startEnergy; //kinda want it final
+    private final int startEnergy;
     private MapDirection orientation;
     private IWorldMap map;
     private Genotype genotype;
 
-    private Animal(Vector2D initPosition, IWorldMap map) {
+    public Animal(Vector2D initPosition, int energy, IWorldMap map) {
         super(initPosition);
         this.orientation = MapDirection.randomDirection();
         this.map = map;
         this.map.place( this);
-
-    }
-
-    public Animal(Vector2D initPosition, int energy, IWorldMap map) {
-        this(initPosition, map);
 
         this.energy = energy;
         this.startEnergy = energy;
@@ -30,7 +25,10 @@ public class Animal extends AbstractMapElement {
     }
 
     public Animal(Vector2D initPosition, IWorldMap map, Animal parent1, Animal parent2) {
-        this(initPosition, map);
+        super(initPosition);
+        this.orientation = MapDirection.randomDirection();
+        this.map = map;
+        this.map.place( this);
 
         this.energy = parent1.reproduced() + parent2.reproduced();
         this.startEnergy = this.energy;
@@ -49,7 +47,7 @@ public class Animal extends AbstractMapElement {
     }
 
     //variant checked if 2 or more animals are on the same field
-    boolean canReproduce() {
+    public boolean canReproduce() {
         return 2 * this.energy >= this.startEnergy;
     }
 
@@ -99,5 +97,13 @@ public class Animal extends AbstractMapElement {
     @Override
     public String toString() {
         return this.orientation.toString();
+    }
+
+    public static int compareByEnergy(Animal animal1, Animal animal2) {
+        return Integer.compare(animal1.energy, animal2.energy);
+    }
+
+    public int getEnergy() {
+        return this.energy;
     }
 }

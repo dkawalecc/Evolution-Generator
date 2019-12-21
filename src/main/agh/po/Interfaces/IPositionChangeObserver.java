@@ -1,4 +1,5 @@
 package agh.po.Interfaces;
+import agh.po.MapElements.AbstractMapElement;
 import agh.po.Vector2D;
 
 public interface IPositionChangeObserver {
@@ -6,4 +7,6 @@ public interface IPositionChangeObserver {
     //methods that allow us to update freeFields list
     void elementRemoved(IMapElement element, Vector2D position);
     void elementAdded(IMapElement element, Vector2D position);
+
+    void deleteAnimal(IMapElement element);
 }
