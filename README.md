@@ -1,2 +1,2 @@
 # Evolution-Generator
-Unfortunately visualization without Java Swing 
+Unfortunately without Java Swing visualization 
