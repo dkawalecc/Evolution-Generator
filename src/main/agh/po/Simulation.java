@@ -2,8 +2,6 @@ package agh.po;
 
 import agh.po.Visualizer.ScreenCleaner;
 import agh.po.WorldMap.SteppeMap;
-import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
-import org.w3c.dom.ls.LSOutput;
 
 public class Simulation {
 

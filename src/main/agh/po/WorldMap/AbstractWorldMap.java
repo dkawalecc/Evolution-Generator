@@ -48,7 +48,7 @@ abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver {
 
     public void elementAdded(IMapElement element, Vector2D position) {
         if (isAnimal(element)) {
-            this.animalsMap.put(position, element);
+            this.animalsMap.put(position,(Animal) element);
         } else {
             this.grassMap.put(position,(Grass) element);
         }
@@ -113,9 +113,12 @@ abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver {
     }
 
     public ArrayList<Animal> animalObjectAt(Vector2D position) {
+        ArrayList<Animal> animalObjects = new ArrayList<>();
         for(Animal animal: this.animals) {
-
+            if(animal.getPosition() == position)
+                animalObjects.add(animal);
         }
+        return animalObjects;
     }
     Grass grassObjectAt(Vector2D position) {
         return this.grassMap.get(position);

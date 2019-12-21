@@ -3,7 +3,7 @@ package agh.po.WorldMap;
 import agh.po.MapElements.Animal;
 import agh.po.MapElements.Grass;
 import agh.po.Vector2D;
-import org.jcp.xml.dsig.internal.dom.ApacheOctetStreamData;
+
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -22,6 +22,7 @@ public class SteppeMap extends AbstractWorldMap {
 
         //exclude jungle fields
         this.maxFreeFields -= this.jungle.maxFreeFields;
+        //concurrent modification exception
         for (Vector2D pos1 : this.freeFields) {
             for (Vector2D pos2 : this.jungle.freeFields) {
                 if (pos1.equals(pos2))
